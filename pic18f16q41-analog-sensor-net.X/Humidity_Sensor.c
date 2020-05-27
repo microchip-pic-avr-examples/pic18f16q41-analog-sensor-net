@@ -50,7 +50,6 @@ void Humid_SendData(void) {
     Humid = Humid + (HUMID_POLYTERM1 * Humid_Capacitance);
     Humid = Humid + HUMID_POLYTERM0;
 
-//    printf("C, %.2f\r\n", Humid_Capacitance); // Print Capacitance for Error Compensation
     printf("Relative Humidity(%%), %.2f\r\n", Humid);
 
 }
