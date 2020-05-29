@@ -37,11 +37,11 @@ The Curiosity Low Pin Count (LPC) Development Board (Part # DM164137) was select
 ### Curiosity LPC Project Setup:
 <img src="images/sensor-net.jpg" alt="MCHP" width="750"/></a>
 
-# Temperature Sensor
+# Temperature Sensor:
 The temperature sensor used in this code example was a 10 kΩ thermistor in conjunction with a 10 kΩ resistor to form a voltage divider circuit. The output of the voltage divider was amplified using the internal operational amplifier (OPA) module on the PIC microcontroller to achieve a gain of 2. The amplified signal from the OPA module was connected internally to the ADCC so that the analog voltage can be converted to a digital value. The resulting voltage was used to calculate the resistance of the thermistor. The characteristic data provided by the thermistor datasheet along with the Steinhart–Hart model equation were used to convert the calculated thermistor resistance to temperature in degrees Celsius.  The following figure shows the circuit used to measure temperature in this example:
 
-### Sensor Interface Circuit
-<img src="images/temp_circuit.PNG" alt="MCHP" width="500"/></a>
+### Sensor Interface Circuit:
+<img src="images/temp-circuit.jpg" alt="MCHP" width="500"/></a>
 
 The OPA module was used in this sensor interface as a non-inverting programmable gain amplifier as illustrated in the circuit above. The feedback network was provided using the internal resistor ladder of the peripheral. The ADCC module was used in basic mode for this sensor interface, and the positive reference voltage to the ADC was 5.0V derived from VDD. The initialization routines used to setup the OPA and ADCC peripherals are shown below. The temperature was derived by measuring the output voltage of the interface circuit using the ADC. The raw ADC conversion result was then converted to volts, and that value was used to determine the resistance of the thermistor. The thermistor resistance was then used to calculate the temperature using a compensation routine based on the Steinhart–Hart model equation. Please refer to the related application note for more information regarding the acquisition and compensation of this sensor data.
 
@@ -73,7 +73,7 @@ void Temp_OPA_Init(void) {
     OPA1CON0 = 0x80; // OPA Enabled; User-defined Feedback;
 }
 ```
-# Relative Humidity Sensor
+# Relative Humidity Sensor:
 The humidity sensor used in this code example was a capacitive sensor whose capacitance changes in relation to the relative humidity in the environment where it is placed. The capacitance of the humidity sensor ranges anywhere from 110pF to 160pF allowing it to be used to accurately measure relative humidity based on the resulting capacitance of the component. The capacitive voltage divider feature of the ADCC was used to measure the relative capacitance of the sensor. Several reference capacitors of known value were measured to provide a baseline that can be used to determine the relative capacitance of a component using the raw ADC conversion result. The humidity sensor datasheet provides a characteristic curve that describes the relationship between the capacitance of the sensor in pF versus the relative humidity as a percentage. The humidity sensor used in this code example is a two terminal device, and one terminal was connected to an analog channel of the PIC18F16Q41 while the other terminal was connected to ground. The ADC was configured to be used in its capacitive voltage divider mode, and the positive reference voltage was 4.096V supplied by the Fixed Voltage Reference (FVR). The initialization routines used to setup the ADCC and FVR peripherals for this sensor interface is shown below. Please refer to the related application note for more information regarding the acquisition and compensation of this sensor data.
 
 ### ADCC Initialization Code:
@@ -105,7 +105,7 @@ void Humid_FVR_Init(void) {
 }
 ```
 
-# Differential Air Pressure Sensor
+# Differential Air Pressure Sensor:
 
 ### ADCC Initialization Code:
 ```c
@@ -133,10 +133,10 @@ void Press_FVR_Init(void) {
 }
 ```
 
-# Air Quality Gas Sensor
+# Air Quality Gas Sensor:
 
-### Sensor Interface Circuit
-<img src="images/air-circuit.PNG" alt="MCHP" width="500"/></a>
+### Sensor Interface Circuit:
+<img src="images/air-circuit.jpg" alt="MCHP" width="500"/></a>
 
 ### ADCC Initialization Code:
 ```c
@@ -175,12 +175,12 @@ void MQ135_OPA_Init(void) {
 }
 ```
 
-# Analog Sensor Net Output results
+# Analog Sensor Net Output results:
 
-### Temperature Sensor Output
+### Temperature Sensor Output:
 
-### Humidity Sensor Output
+### Humidity Sensor Output:
 
-### Differential Air Pressure Sensor Output
+### Differential Air Pressure Sensor Output:
 
-### Air Quality Sensor Output
+### Air Quality Sensor Output:
