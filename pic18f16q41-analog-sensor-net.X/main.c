@@ -42,7 +42,6 @@
  */
 
 #include "mcc_generated_files/mcc.h"
-#include "MQ7_Sensor.h"
 #include "MQ135_Sensor.h"
 #include "Temp_Sensor.h"
 #include "Humidity_Sensor.h"

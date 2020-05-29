@@ -20,7 +20,6 @@
       </logicalFolder>
       <itemPath>Humidity_Sensor.h</itemPath>
       <itemPath>MQ135_Sensor.h</itemPath>
-      <itemPath>MQ7_Sensor.h</itemPath>
       <itemPath>Pressure_Sensor.h</itemPath>
       <itemPath>Temp_Sensor.h</itemPath>
     </logicalFolder>
@@ -48,7 +47,6 @@
       <itemPath>main.c</itemPath>
       <itemPath>Humidity_Sensor.c</itemPath>
       <itemPath>MQ135_Sensor.c</itemPath>
-      <itemPath>MQ7_Sensor.c</itemPath>
       <itemPath>Pressure_Sensor.c</itemPath>
       <itemPath>Temp_Sensor.c</itemPath>
     </logicalFolder>
