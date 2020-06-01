@@ -80,7 +80,7 @@ void main(void) {
         switch (currentState) {
             case SENSOR_NET_SPLASH:
                 printf("PIC18F16Q41 Sensor Net Application Note \r\n");
-                printf("Press button S1 to cycle through sensor nodes \r\n");
+                printf("Press button S1 to cycle through sensor nodes \r\n\n");
                 TMR4_StartTimer();
                 while (!PIR10bits.TMR4IF);
                 TMR4_StopTimer();

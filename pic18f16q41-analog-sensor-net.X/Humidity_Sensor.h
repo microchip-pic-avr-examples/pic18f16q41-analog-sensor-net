@@ -20,7 +20,7 @@ extern "C" {
 #define CAP_POLYTERM2           301.16
 #define CAP_POLYTERM1           902.16
 #define CAP_POLYTERM0           764.38
-#define CAP_ERROR               22
+#define CAP_ERROR               27
 #define HUMID_POLYTERM2         -0.0405
 #define HUMID_POLYTERM1         12.915
 #define HUMID_POLYTERM0         -929.12

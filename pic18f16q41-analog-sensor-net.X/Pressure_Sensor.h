@@ -14,7 +14,7 @@ extern "C" {
 
 #define PRESSURE_CONSTANT       0.057
 #define PRESSURE_VSUPPLY        4.75
-#define PRESSURE_ERROR          1.5
+#define PRESSURE_ERROR          1.6
 #define ADCC_RESOLUTION         4096
 #define ADCC_POS_REFERENCE      4.096
 

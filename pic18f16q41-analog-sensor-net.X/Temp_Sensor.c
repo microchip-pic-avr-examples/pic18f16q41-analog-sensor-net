@@ -56,7 +56,7 @@ void Temp_SendData(void) {
     TempK = TempK * (1 / TEMP_BETA);
     TempK = TempK + (1 / T0);
     TempK = 1 / TempK;
-    TempC = TempK - K_CONST;
+    TempC = (TempK - K_CONST) + TEMP_ERROR;
 
     printf("Temperature(C), %1.1f \r\n", TempC);
 }

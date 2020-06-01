@@ -1,6 +1,6 @@
 <a href="https://www.microchip.com" rel="nofollow"><img src="images/microchip.png" alt="MCHP" width="300"/></a>
 
-# Related Documentation
+# Related Documentation:
 This project is related to [ANxxxx] (insert link here): Analog Sensor Measurement and Acquisition. Refer to the application note for more details.
 
 # Objective:
@@ -38,7 +38,7 @@ The Curiosity Low Pin Count (LPC) Development Board (Part # DM164137) was select
 <img src="images/sensor-net.jpg" alt="MCHP" width="750"/></a>
 
 # Temperature Sensor:
-The temperature sensor used in this code example was a 10 kΩ thermistor in conjunction with a 10 kΩ resistor to form a voltage divider circuit. The output of the voltage divider was amplified using the internal operational amplifier (OPA) module on the PIC microcontroller to achieve a gain of 2. The amplified signal from the OPA module was connected internally to the ADCC so that the analog voltage can be converted to a digital value. The resulting voltage was used to calculate the resistance of the thermistor. The characteristic data provided by the thermistor datasheet along with the Steinhart–Hart model equation were used to convert the calculated thermistor resistance to temperature in degrees Celsius.  The following figure shows the circuit used to measure temperature in this example:
+The temperature sensor used in this code example was a 10 kΩ thermistor in conjunction with a 10 kΩ resistor to form a voltage divider circuit. The output of the voltage divider was amplified using the internal operational amplifier (OPA) module on the PIC microcontroller to achieve a gain of 2. The amplified signal from the OPA module was connected internally to the ADCC so that the analog voltage can be converted to a digital value. The resulting voltage was used to calculate the resistance of the thermistor. The characteristic data provided by the thermistor datasheet along with the Steinhart–Hart model equation were used to convert the calculated thermistor resistance to temperature in degrees Celsius. The following figure shows the circuit used to measure temperature in this example:
 
 ### Sensor Interface Circuit:
 <img src="images/temp-circuit.jpg" alt="MCHP" width="500"/></a>
@@ -74,7 +74,7 @@ void Temp_OPA_Init(void) {
 }
 ```
 # Relative Humidity Sensor:
-The humidity sensor used in this code example was a capacitive sensor whose capacitance changes in relation to the relative humidity in the environment where it is placed. The capacitance of the humidity sensor ranges anywhere from 110pF to 160pF allowing it to be used to accurately measure relative humidity based on the resulting capacitance of the component. The capacitive voltage divider feature of the ADCC was used to measure the relative capacitance of the sensor. Several reference capacitors of known value were measured to provide a baseline that can be used to determine the relative capacitance of a component using the raw ADC conversion result. The humidity sensor datasheet provides a characteristic curve that describes the relationship between the capacitance of the sensor in pF versus the relative humidity as a percentage. The humidity sensor used in this code example is a two terminal device, and one terminal was connected to an analog channel of the PIC18F16Q41 while the other terminal was connected to ground. The ADC was configured to be used in its capacitive voltage divider mode, and the positive reference voltage was 4.096V supplied by the Fixed Voltage Reference (FVR). The initialization routines used to setup the ADCC and FVR peripherals for this sensor interface is shown below. Please refer to the related application note for more information regarding the acquisition and compensation of this sensor data.
+The humidity sensor used in this code example was a capacitive sensor whose capacitance changes in relation to the relative humidity in the environment where it is placed. The capacitance of the humidity sensor ranges anywhere from 110pF to 160pF allowing it to be used to accurately measure relative humidity based on the resulting capacitance of the component. The capacitive voltage divider feature of the ADCC was used to measure the relative capacitance of the sensor. Several reference capacitors of known value were measured to provide a baseline that can be used to determine the relative capacitance of a component using the raw ADC conversion result. The humidity sensor datasheet provides a characteristic curve that describes the relationship between the capacitance of the sensor in pF versus the relative humidity as a percentage. The humidity sensor used in this code example is a two terminal device, and one terminal was connected to an analog channel of the PIC18F16Q41 while the other terminal was connected to ground. The ADC was configured to be used in its capacitive voltage divider mode, and the positive reference voltage was 4.096V supplied by the Fixed Voltage Reference (FVR). The initialization routines used to setup the ADCC and FVR peripherals for this sensor interface are shown below. Please refer to the related application note for more information regarding the acquisition and compensation of this sensor data.
 
 ### ADCC Initialization Code:
 ```c
@@ -106,6 +106,7 @@ void Humid_FVR_Init(void) {
 ```
 
 # Differential Air Pressure Sensor:
+The differential air pressure sensor used in this code example utilizes a piezo resistive transducer, and outputs an analog voltage linearly proportional to the differential pressure measured between the two physical input ports of the sensor. The analog output voltage of the sensor was converted to differential air pressure in kPa using a compensation routine provided in the sensor datasheet. The pressure sensor used in this code example measures differential air pressure between -7 kPa and 7 kPa. The differential air pressure provided by the sensor is a result of the difference in absolute air pressure between the two physical input ports attached to the sensor package. The ADCC was used in basic mode to convert the analog output voltage of the sensor to a digital value. The positive reference to the ADCC was 4.096V which was supplied by the fixed voltage reference. The initialization routines used to setup the ADCC and FVR peripherals for this sensor interface are shown below. Please refer to the related application note for more information regarding the acquisition and compensation of this sensor data.
 
 ### ADCC Initialization Code:
 ```c
@@ -174,6 +175,8 @@ void MQ135_OPA_Init(void) {
     OPA1CON0 = 0x88; // OPA Enabled; Unity Gain Mode;
 }
 ```
+
+# Analog Sensor Net User Interface:
 
 # Analog Sensor Net Output results:
 

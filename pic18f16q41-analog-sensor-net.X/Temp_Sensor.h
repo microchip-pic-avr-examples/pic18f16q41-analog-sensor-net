@@ -21,7 +21,8 @@ extern "C" {
 #define TEMP_POS_REF            3.3         // Thermistor Circuit Positive Reference;
 #define TEMP_BETA               3289.66     // Thermistor Beta Coefficiant;
 #define K_CONST                 273.15
-
+#define TEMP_ERROR              -2
+    
     void Temp_Init(void);
     void Temp_OPA_Init(void);
     void Temp_SendData(void);
