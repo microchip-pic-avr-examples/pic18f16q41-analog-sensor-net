@@ -1,7 +1,7 @@
 <a href="https://www.microchip.com" rel="nofollow"><img src="images/microchip.png" alt="MCHP" width="300"/></a>
 
 # Related Documentation:
-This project is related to [AN3521] (www.microchip.com): Analog Sensor Measurement and Acquisition. Refer to the application note for more details.
+This project is related to AN3521: Analog Sensor Measurement and Acquisition. Refer to the application note for more details.
 
 # Objective:
 The "pic18f16q41-analog-sensor-net" project highlights the advanced analog peripherals found on the PIC18-Q41 family of devices, and demonstrates using those peripherals to create an analog sensor net for residential environmental monitoring. The analog sensor net is comprised of a temperature sensor (thermistor), an air quality sensor, a differential air pressure sensor, and a capacitive humidity sensor. The idea behind the sensor net is to take a group of dispersed sensors and connect them centrally where the data can be collected and monitored. Each component in the analog sensor net is treated in a modular nature in both firmware and hardware and should be considered as individual nodes, making it simple to add or remove sensors to the net as needed. This code example uses the 12-bit Analog to Digital Converter with Computation (ADCC), the Capacitive Voltage Divider built into the ADCC, the Operational Amplifier (OPA) module, the Fixed Voltage Reference (FVR) module, and the Universal Asynchronous Receiver / Transmitter (UART) module. Each particular component of the analog sensor net requires a unique interface depending on the characteristics of the sensor, and the peripherals used have a unique initialization routine for each sensor that is called as the user cycles through nodes in the application.
