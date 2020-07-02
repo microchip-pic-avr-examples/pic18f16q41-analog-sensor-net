@@ -15,7 +15,7 @@ The "pic18f16q41-analog-sensor-net" project highlights the advanced analog perip
 
 # Hardware Used:
   - [PIC18F16Q41 Microcontroller](https://www.microchip.com/wwwproducts/en/PIC18F16Q41)
-  - [Curiosity Low Pin Count (LPC) Development Board](https://www.microchip.com/DevelopmentTools/ProductDetails/DM164137)
+  - [Curiosity Low Pin Count (LPC) Development Board - Rev 4](https://www.microchip.com/DevelopmentTools/ProductDetails/DM164137)
   - [Vishay 10 kΩ NTC Thermistor](http://www.vishay.com/docs/29078/ntcle413.pdf)
   - [Vishay Humidity-Sense-E Capacitive Humidity Sensor](http://www.vishay.com/docs/29001/23226919.pdf)      
   - [NXP Integrated Silicon Pressure Sensor](https://www.nxp.com/docs/en/data-sheet/MPXV7007.pdf)
