@@ -4,7 +4,7 @@
     "content": {
         "metaDataVersion": "1.1.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f16q41-analog-sensor-net",
-        "version": " ",
+        "version": "1.0.1",
         "displayName": "PIC18F16Q41 Analog Sensor Net",
         "projectName": "pic18f16q41-analog-sensor-net",
         "shortDescription": "Code example demonstrating analog sensor interface techniques using the PIC18F16Q41",
@@ -63,7 +63,7 @@
                   "Thermistor",
                   "Air Quality",
                   "Pressure",
-      			      "OPA",
+      			  "OPA",
                   "ADCC",
                   "Opamp",
                   "Operational Amplifier"
