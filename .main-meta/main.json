@@ -3,56 +3,71 @@
     "category": "com.microchip.ide.project",
     "content": {
         "metaDataVersion": "1.1.0",
-        "name": "com.microchip.mcu8.mplabx.project.",
+        "name": "com.microchip.mcu8.mplabx.project.pic18f16q41-analog-sensor-net",
         "version": " ",
-        "displayName": "  ",
-        "projectName": "",
-        "shortDescription": "",
+        "displayName": "PIC18F16Q41 Analog Sensor Net",
+        "projectName": "pic18f16q41-analog-sensor-net",
+        "shortDescription": "Code example demonstrating analog sensor interface techniques using the PIC18F16Q41",
         "ide": {
-            "name": "",
-            "semverRange": ""
-        },
-        "compiler": [
-			{
-				"name": "",
-				"semverRange": ""
-			}
-		],
-        "dfp": {
-            "name": "",
-            "semverRange": ""
-        },
-        "configurator": {
-            "name": "",
-            "semverRange": ""
-        },
-        "device": {
-            "metaDataVersion": "1.0.0",
-            "category": "com.microchip.portal.contentRef",
-            "content": {
-                "metaDataVersion": "1.0.0",
-                "category": "com.microchip.device",
-                "name": "",
-                "versionRange": "*"
-            }
-        },
-        "author": "",
-        "subcategories": [
-            "",
-            [
-               "Peripherals", ""
-            ],
-            [
-               "Peripherals", ""
-            ]            			
-        ],
-        "peripherals": [
-            "",""
-        ],
-        "keywords": [
-            "",
-            ""			
-        ],
+                  "name": "MPLABX",
+                  "semverRange": ">=5.40.0"
+              },
+              "compiler": [
+      			{
+      				"name": "XC8",
+      				"semverRange": "^2.20.0"
+      			}
+      		],
+              "dfp": {
+                  "name": "PIC18F-Q_DFP",
+                  "semverRange": "^1.5.124"
+              },
+              "configurator": {
+                  "name": "MCC",
+                  "semverRange": ">=3.95.0"
+              },
+              "device": {
+                  "metaDataVersion": "1.0.0",
+                  "category": "com.microchip.portal.contentRef",
+                  "content": {
+                      "metaDataVersion": "1.0.0",
+                      "category": "com.microchip.device",
+                      "name": "PIC18F16Q41",
+                      "versionRange": "*"
+                  }
+              },
+              "author": "Microchip",
+              "subcategories": [
+                  "MCC",
+                  [
+                     "Peripherals", "ADCC"
+                  ],
+                  [
+                     "Peripherals", "FVR"
+                  ],
+                  [
+                     "Peripherals", "OPA"
+                  ],
+                  [
+                     "Peripherals", "UART"
+                  ]
+              ],
+              "peripherals": [
+                  "ADCC","FVR","OPA","UART"
+              ],
+              "keywords": [
+                  "MCC",
+                  "CIP",
+                  "Analog",
+                  "Sensor",
+                  "Thermistor",
+                  "Air Quality",
+                  "Pressure",
+      			      "OPA",
+                  "ADCC",
+                  "Opamp",
+                  "Operational Amplifier"
+              ],
 		"additionalData": {
 			"longDescription": {
 				"metaDataVersion": "1.0.0",
