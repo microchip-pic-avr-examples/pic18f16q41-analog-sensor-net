@@ -41,7 +41,7 @@
     SOFTWARE.
  */
 
-#include "mcc_generated_files/mcc.h"
+#include "mcc_generated_files/system/system.h"
 #include "MQ135_Sensor.h"
 #include "Temp_Sensor.h"
 #include "Humidity_Sensor.h"
@@ -81,9 +81,9 @@ void main(void) {
             case SENSOR_NET_SPLASH:
                 printf("PIC18F16Q41 Sensor Net Application Note \r\n");
                 printf("Press button S1 to cycle through sensor nodes \r\n\n");
-                TMR4_StartTimer();
+                Timer4_Start();
                 while (!PIR10bits.TMR4IF);
-                TMR4_StopTimer();
+                Timer4_Stop();
                 currentState = MQ135_SENSOR;
                 break;
 
@@ -94,7 +94,7 @@ void main(void) {
                 }
                 MQ135_SendData();
                 if (SW1_GetValue() == 0) {
-                    TMR2_StartTimer();
+                    Timer2_Start();
                     while (!PIR3bits.TMR2IF);
                     if (SW1_GetValue() == 0) {
                         InitFlag = 0;
@@ -110,7 +110,7 @@ void main(void) {
                 }
                 Humid_SendData();
                 if (SW1_GetValue() == 0) {
-                    TMR2_StartTimer();
+                    Timer2_Start();
                     while (!PIR3bits.TMR2IF);
                     if (SW1_GetValue() == 0) {
                         InitFlag = 0;
@@ -126,7 +126,7 @@ void main(void) {
                 }
                 Temp_SendData();
                 if (SW1_GetValue() == 0) {
-                    TMR2_StartTimer();
+                    Timer2_Start();
                     while (!PIR3bits.TMR2IF);
                     if (SW1_GetValue() == 0) {
                         InitFlag = 0;
@@ -142,7 +142,7 @@ void main(void) {
                 }
                 Press_SendData();
                 if (SW1_GetValue() == 0) {
-                    TMR2_StartTimer();
+                    Timer2_Start();
                     while (!PIR3bits.TMR2IF);
                     if (SW1_GetValue() == 0) {
                         InitFlag = 0;

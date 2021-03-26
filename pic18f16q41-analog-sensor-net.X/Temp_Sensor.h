@@ -6,7 +6,7 @@
  */
 
 #include <xc.h>
-#include "mcc_generated_files/mcc.h"
+#include "mcc_generated_files/system/system.h"
 #include <math.h>
 
 #ifndef TEMP_SENSOR_H

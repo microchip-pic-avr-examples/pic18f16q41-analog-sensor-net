@@ -7,16 +7,32 @@
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
-        <itemPath>mcc_generated_files/pin_manager.h</itemPath>
-        <itemPath>mcc_generated_files/memory.h</itemPath>
-        <itemPath>mcc_generated_files/uart1.h</itemPath>
-        <itemPath>mcc_generated_files/adcc.h</itemPath>
-        <itemPath>mcc_generated_files/tmr2.h</itemPath>
-        <itemPath>mcc_generated_files/tmr4.h</itemPath>
-        <itemPath>mcc_generated_files/tmr0.h</itemPath>
-        <itemPath>mcc_generated_files/device_config.h</itemPath>
-        <itemPath>mcc_generated_files/mcc.h</itemPath>
-        <itemPath>mcc_generated_files/fvr.h</itemPath>
+        <logicalFolder name="adc" displayName="adc" projectFiles="true">
+          <itemPath>mcc_generated_files/adc/adcc.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="flash" displayName="flash" projectFiles="true">
+          <itemPath>mcc_generated_files/flash/flash.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="fvr" displayName="fvr" projectFiles="true">
+          <itemPath>mcc_generated_files/fvr/fvr.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="system" displayName="system" projectFiles="true">
+          <itemPath>mcc_generated_files/system/system.h</itemPath>
+          <itemPath>mcc_generated_files/system/clock.h</itemPath>
+          <itemPath>mcc_generated_files/system/config_bits.h</itemPath>
+          <itemPath>mcc_generated_files/system/interrupt.h</itemPath>
+          <itemPath>mcc_generated_files/system/pins.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="timer" displayName="timer" projectFiles="true">
+          <itemPath>mcc_generated_files/timer/tmr2.h</itemPath>
+          <itemPath>mcc_generated_files/timer/tmr4.h</itemPath>
+          <itemPath>mcc_generated_files/timer/tmr0.h</itemPath>
+          <itemPath>mcc_generated_files/timer/timer_interface.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="uart" displayName="uart" projectFiles="true">
+          <itemPath>mcc_generated_files/uart/uart1.h</itemPath>
+          <itemPath>mcc_generated_files/uart/uart_interface.h</itemPath>
+        </logicalFolder>
       </logicalFolder>
       <itemPath>Humidity_Sensor.h</itemPath>
       <itemPath>MQ135_Sensor.h</itemPath>
@@ -33,16 +49,42 @@
       <logicalFolder name="MCC Generated Files"
                      displayName="MCC Generated Files"
                      projectFiles="true">
-        <itemPath>mcc_generated_files/adcc.c</itemPath>
-        <itemPath>mcc_generated_files/fvr.c</itemPath>
-        <itemPath>mcc_generated_files/tmr0.c</itemPath>
-        <itemPath>mcc_generated_files/memory.c</itemPath>
-        <itemPath>mcc_generated_files/tmr2.c</itemPath>
-        <itemPath>mcc_generated_files/tmr4.c</itemPath>
-        <itemPath>mcc_generated_files/device_config.c</itemPath>
-        <itemPath>mcc_generated_files/mcc.c</itemPath>
-        <itemPath>mcc_generated_files/uart1.c</itemPath>
-        <itemPath>mcc_generated_files/pin_manager.c</itemPath>
+        <logicalFolder name="adc" displayName="adc" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>mcc_generated_files/adc/src/adcc.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="flash" displayName="flash" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>mcc_generated_files/flash/src/flash.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="fvr" displayName="fvr" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>mcc_generated_files/fvr/src/fvr.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="system" displayName="system" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>mcc_generated_files/system/src/pins.c</itemPath>
+            <itemPath>mcc_generated_files/system/src/config_bits.c</itemPath>
+            <itemPath>mcc_generated_files/system/src/interrupt.c</itemPath>
+            <itemPath>mcc_generated_files/system/src/clock.c</itemPath>
+            <itemPath>mcc_generated_files/system/src/system.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="timer" displayName="timer" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>mcc_generated_files/timer/src/tmr4.c</itemPath>
+            <itemPath>mcc_generated_files/timer/src/tmr2.c</itemPath>
+            <itemPath>mcc_generated_files/timer/src/tmr0.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="uart" displayName="uart" projectFiles="true">
+          <logicalFolder name="src" displayName="src" projectFiles="true">
+            <itemPath>mcc_generated_files/uart/src/uart1.c</itemPath>
+          </logicalFolder>
+        </logicalFolder>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>Humidity_Sensor.c</itemPath>
@@ -55,6 +97,7 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
       <itemPath>MyConfig.mc3</itemPath>
+      <itemPath>pic18f16q41-analog-sensor-net.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -70,11 +113,11 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>2.20</languageToolchainVersion>
+        <languageToolchainVersion>2.31</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC18F-Q_DFP" vendor="Microchip" version="1.5.124"/>
+        <pack name="PIC18F-Q_DFP" vendor="Microchip" version="1.9.175"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -95,6 +138,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
@@ -198,7 +242,53 @@
         <property key="stack-size-main" value="auto"/>
         <property key="stack-type" value="compiled"/>
         <property key="user-pack-device-support" value=""/>
+        <property key="wpo-lto" value="false"/>
       </XC8-config-global>
+      <nEdbgTool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="Freeze Peripherals" value="true"/>
+        <property key="communication.activationmode" value="nohv"/>
+        <property key="communication.interface"
+                  value="${communication.interface.default}"/>
+        <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="firmware.path"
+                  value="Press to browse for a specific firmware version"/>
+        <property key="firmware.toolpack"
+                  value="Press to select which tool pack to use"/>
+        <property key="firmware.update.action" value="firmware.update.use.latest"/>
+        <property key="freeze.timers" value="false"/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges"
+                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="0-ffff"/>
+        <property key="memories.rww" value="true"/>
+        <property key="poweroptions.powerenable" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges"
+                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value="380000-3803ff"/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="toolpack.updateoptions"
+                  value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion"
+                  value="Press to select which tool pack to use"/>
+        <property key="voltagevalue" value=""/>
+      </nEdbgTool>
       <pkob4hybrid>
         <property key="AutoSelectMemRanges" value="auto"/>
         <property key="Freeze Peripherals" value="true"/>
@@ -213,6 +303,7 @@
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -226,8 +317,7 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-ffff"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/Users/C16783/Desktop/Q41 Analog Sensor Net AppNote/pic18f16q41-analog-sensor-net.X/debug/free/pic18f16q41-analog-sensor-net_ptg"/>
+        <property key="memories.rww" value="true"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
@@ -243,7 +333,6 @@
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
-        <property key="programoptionsedbg.eraseb4program" value="true"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
@@ -256,13 +345,13 @@
         <targetDevice>PIC18F16Q41</targetDevice>
         <targetHeader></targetHeader>
         <targetPluginBoard></targetPluginBoard>
-        <platformTool>pkob4hybrid</platformTool>
+        <platformTool>noID</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>2.20</languageToolchainVersion>
+        <languageToolchainVersion>2.31</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="PIC18F-Q_DFP" vendor="Microchip" version="1.5.124"/>
+        <pack name="PIC18F-Q_DFP" vendor="Microchip" version="1.9.175"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -283,6 +372,7 @@
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
         <makeCustomizationPreStep></makeCustomizationPreStep>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
         <makeCustomizationPostStep></makeCustomizationPostStep>
@@ -386,6 +476,7 @@
         <property key="stack-size-main" value="auto"/>
         <property key="stack-type" value="compiled"/>
         <property key="user-pack-device-support" value=""/>
+        <property key="wpo-lto" value="false"/>
       </XC8-config-global>
       <pkob4hybrid>
         <property key="AutoSelectMemRanges" value="auto"/>
@@ -401,6 +492,7 @@
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="freeze.timers" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>
         <property key="memories.configurationmemory" value="true"/>
@@ -414,8 +506,7 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-ffff"/>
-        <property key="programmerToGoFilePath"
-                  value="C:/Users/C16783/Desktop/Q41 Analog Sensor Net AppNote/pic18f16q41-analog-sensor-net.X/debug/pro/pic18f16q41-analog-sensor-net_ptg"/>
+        <property key="memories.rww" value="true"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.pgmentry.voltage" value="low"/>
@@ -431,7 +522,6 @@
         <property key="programoptions.programcalmem" value="false"/>
         <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
-        <property key="programoptionsedbg.eraseb4program" value="true"/>
         <property key="toolpack.updateoptions"
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"

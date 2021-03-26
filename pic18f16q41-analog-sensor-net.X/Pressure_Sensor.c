@@ -6,7 +6,7 @@
  */
 
 #include "Pressure_Sensor.h"
-#include "mcc_generated_files/mcc.h"
+#include "mcc_generated_files/system/system.h"
 #include "Temp_Sensor.h"
 #include <xc.h>
 

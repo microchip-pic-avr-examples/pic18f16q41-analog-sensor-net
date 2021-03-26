@@ -5,9 +5,8 @@
  * Created on April 27, 2020, 12:49 PM
  */
 
-#include "mcc_generated_files/uart1.h"
-#include "mcc_generated_files/adcc.h"
-#include "mcc_generated_files/mcc.h"
+
+#include "mcc_generated_files/system/system.h"
 #include <xc.h>
 
 #ifndef HUMIDITY_SENSOR_H

@@ -1,24 +1,21 @@
 /**
-  @Generated Pin Manager Header File
+  Generated Pins header File
 
-  @Company:
+  Company:
     Microchip Technology Inc.
 
-  @File Name:
-    pin_manager.h
+  File Name:
+    pins.h
 
-  @Summary:
-    This is the Pin Manager file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+  Summary:
+    This is generated driver header for pins. 
 
-  @Description
-    This header file provides APIs for driver for .
-    Generation Information :
-        Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.0
-        Device            :  PIC18F16Q41
-        Driver Version    :  2.11
-    The generated drivers are tested against the following:
-        Compiler          :  XC8 2.10 and above
-        MPLAB 	          :  MPLAB X 5.35	
+  Description:
+    This header file provides APIs for all pins selected in the GUI.
+
+  Generation Information:
+    Driver Version:  3.0.0
+
 */
 
 /*
@@ -44,8 +41,8 @@
     SOFTWARE.
 */
 
-#ifndef PIN_MANAGER_H
-#define PIN_MANAGER_H
+#ifndef PINS_H
+#define PINS_H
 
 /**
   Section: Included Files
@@ -65,19 +62,27 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
-// get/set RA0 procedures
-#define RA0_SetHigh()            do { LATAbits.LATA0 = 1; } while(0)
-#define RA0_SetLow()             do { LATAbits.LATA0 = 0; } while(0)
-#define RA0_Toggle()             do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0)
-#define RA0_GetValue()              PORTAbits.RA0
-#define RA0_SetDigitalInput()    do { TRISAbits.TRISA0 = 1; } while(0)
-#define RA0_SetDigitalOutput()   do { TRISAbits.TRISA0 = 0; } while(0)
-#define RA0_SetPullup()             do { WPUAbits.WPUA0 = 1; } while(0)
-#define RA0_ResetPullup()           do { WPUAbits.WPUA0 = 0; } while(0)
-#define RA0_SetAnalogMode()         do { ANSELAbits.ANSELA0 = 1; } while(0)
-#define RA0_SetDigitalMode()        do { ANSELAbits.ANSELA0 = 0; } while(0)
+// get/set RA0 aliases
+#define IO_RA0_TRIS                 TRISAbits.TRISA0
+#define IO_RA0_LAT                  LATAbits.LATA0
+#define IO_RA0_PORT                 PORTAbits.RA0
+#define IO_RA0_WPU                  WPUAbits.WPUA0
+#define IO_RA0_OD                   ODCONAbits.ODCA0
+#define IO_RA0_ANS                  ANSELAbits.ANSELA0
+#define IO_RA0_SetHigh()            do { LATAbits.LATA0 = 1; } while(0)
+#define IO_RA0_SetLow()             do { LATAbits.LATA0 = 0; } while(0)
+#define IO_RA0_Toggle()             do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0)
+#define IO_RA0_GetValue()           PORTAbits.RA0
+#define IO_RA0_SetDigitalInput()    do { TRISAbits.TRISA0 = 1; } while(0)
+#define IO_RA0_SetDigitalOutput()   do { TRISAbits.TRISA0 = 0; } while(0)
+#define IO_RA0_SetPullup()          do { WPUAbits.WPUA0 = 1; } while(0)
+#define IO_RA0_ResetPullup()        do { WPUAbits.WPUA0 = 0; } while(0)
+#define IO_RA0_SetPushPull()        do { ODCONAbits.ODCA0 = 0; } while(0)
+#define IO_RA0_SetOpenDrain()       do { ODCONAbits.ODCA0 = 1; } while(0)
+#define IO_RA0_SetAnalogMode()      do { ANSELAbits.ANSELA0 = 1; } while(0)
+#define IO_RA0_SetDigitalMode()     do { ANSELAbits.ANSELA0 = 0; } while(0)
 
-// get/set VDD_REF aliases
+// get/set RA5 aliases
 #define VDD_REF_TRIS                 TRISAbits.TRISA5
 #define VDD_REF_LAT                  LATAbits.LATA5
 #define VDD_REF_PORT                 PORTAbits.RA5
@@ -97,7 +102,7 @@
 #define VDD_REF_SetAnalogMode()      do { ANSELAbits.ANSELA5 = 1; } while(0)
 #define VDD_REF_SetDigitalMode()     do { ANSELAbits.ANSELA5 = 0; } while(0)
 
-// get/set HUMID aliases
+// get/set RB6 aliases
 #define HUMID_TRIS                 TRISBbits.TRISB6
 #define HUMID_LAT                  LATBbits.LATB6
 #define HUMID_PORT                 PORTBbits.RB6
@@ -117,19 +122,27 @@
 #define HUMID_SetAnalogMode()      do { ANSELBbits.ANSELB6 = 1; } while(0)
 #define HUMID_SetDigitalMode()     do { ANSELBbits.ANSELB6 = 0; } while(0)
 
-// get/set RB7 procedures
-#define RB7_SetHigh()            do { LATBbits.LATB7 = 1; } while(0)
-#define RB7_SetLow()             do { LATBbits.LATB7 = 0; } while(0)
-#define RB7_Toggle()             do { LATBbits.LATB7 = ~LATBbits.LATB7; } while(0)
-#define RB7_GetValue()              PORTBbits.RB7
-#define RB7_SetDigitalInput()    do { TRISBbits.TRISB7 = 1; } while(0)
-#define RB7_SetDigitalOutput()   do { TRISBbits.TRISB7 = 0; } while(0)
-#define RB7_SetPullup()             do { WPUBbits.WPUB7 = 1; } while(0)
-#define RB7_ResetPullup()           do { WPUBbits.WPUB7 = 0; } while(0)
-#define RB7_SetAnalogMode()         do { ANSELBbits.ANSELB7 = 1; } while(0)
-#define RB7_SetDigitalMode()        do { ANSELBbits.ANSELB7 = 0; } while(0)
+// get/set RB7 aliases
+#define IO_RB7_TRIS                 TRISBbits.TRISB7
+#define IO_RB7_LAT                  LATBbits.LATB7
+#define IO_RB7_PORT                 PORTBbits.RB7
+#define IO_RB7_WPU                  WPUBbits.WPUB7
+#define IO_RB7_OD                   ODCONBbits.ODCB7
+#define IO_RB7_ANS                  ANSELBbits.ANSELB7
+#define IO_RB7_SetHigh()            do { LATBbits.LATB7 = 1; } while(0)
+#define IO_RB7_SetLow()             do { LATBbits.LATB7 = 0; } while(0)
+#define IO_RB7_Toggle()             do { LATBbits.LATB7 = ~LATBbits.LATB7; } while(0)
+#define IO_RB7_GetValue()           PORTBbits.RB7
+#define IO_RB7_SetDigitalInput()    do { TRISBbits.TRISB7 = 1; } while(0)
+#define IO_RB7_SetDigitalOutput()   do { TRISBbits.TRISB7 = 0; } while(0)
+#define IO_RB7_SetPullup()          do { WPUBbits.WPUB7 = 1; } while(0)
+#define IO_RB7_ResetPullup()        do { WPUBbits.WPUB7 = 0; } while(0)
+#define IO_RB7_SetPushPull()        do { ODCONBbits.ODCB7 = 0; } while(0)
+#define IO_RB7_SetOpenDrain()       do { ODCONBbits.ODCB7 = 1; } while(0)
+#define IO_RB7_SetAnalogMode()      do { ANSELBbits.ANSELB7 = 1; } while(0)
+#define IO_RB7_SetDigitalMode()     do { ANSELBbits.ANSELB7 = 0; } while(0)
 
-// get/set SW1 aliases
+// get/set RC4 aliases
 #define SW1_TRIS                 TRISCbits.TRISC4
 #define SW1_LAT                  LATCbits.LATC4
 #define SW1_PORT                 PORTCbits.RC4
@@ -149,7 +162,7 @@
 #define SW1_SetAnalogMode()      do { ANSELCbits.ANSELC4 = 1; } while(0)
 #define SW1_SetDigitalMode()     do { ANSELCbits.ANSELC4 = 0; } while(0)
 
-// get/set PRESS aliases
+// get/set RC5 aliases
 #define PRESS_TRIS                 TRISCbits.TRISC5
 #define PRESS_LAT                  LATCbits.LATC5
 #define PRESS_PORT                 PORTCbits.RC5
@@ -195,7 +208,7 @@ void PIN_MANAGER_IOC(void);
 
 
 
-#endif // PIN_MANAGER_H
+#endif // PINS_H
 /**
  End of File
 */
