@@ -7,10 +7,9 @@ This project is related to AN3521: Analog Sensor Measurement and Acquisition. Re
 The "pic18f16q41-analog-sensor-net" project highlights the advanced analog peripherals found on the PIC18-Q41 family of devices, and demonstrates using those peripherals to create an analog sensor net for residential environmental monitoring. The analog sensor net is comprised of a temperature sensor (thermistor), an air quality sensor, a differential air pressure sensor, and a capacitive humidity sensor. The idea behind the sensor net is to take a group of dispersed sensors and connect them centrally where the data can be collected and monitored. Each component in the analog sensor net is treated in a modular nature in both firmware and hardware and should be considered as individual nodes, making it simple to add or remove sensors to the net as needed. This code example uses the 12-bit Analog to Digital Converter with Computation (ADCC), the Capacitive Voltage Divider built into the ADCC, the Operational Amplifier (OPA) module, the Fixed Voltage Reference (FVR) module, and the Universal Asynchronous Receiver / Transmitter (UART) module. Each particular component of the analog sensor net requires a unique interface depending on the characteristics of the sensor, and the peripherals used have a unique initialization routine for each sensor that is called as the user cycles through nodes in the application.
 
 # Software Used:
-  - MPLAB® X IDE 5.40 or newer [(microchip.com/mplab/mplab-x-ide)](http://www.microchip.com/mplab/mplab-x-ide)
-  - MPLAB® XC8 2.20 or a newer compiler [(microchip.com/mplab/compilers)](http://www.microchip.com/mplab/compilers)
-  - MPLAB® Code Configurator (MCC) 3.95.0 or newer [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
-  - MPLAB® Code Configurator (MCC) Device Libraries PIC10 / PIC12 / PIC16 / PIC18 MCUs [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
+  - MPLAB® X IDE 5.45 or newer [(microchip.com/mplab/mplab-x-ide)](http://www.microchip.com/mplab/mplab-x-ide)
+  - MPLAB® XC8 2.31 or a newer compiler [(microchip.com/mplab/compilers)](http://www.microchip.com/mplab/compilers)
+  - MPLAB® Code Configurator (MCC) 4.1.0 or newer [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
   - Microchip PIC18F-Q Series Device Support (1.5.124) or newer [(packs.download.microchip.com/)](https://packs.download.microchip.com/)
 
 # Hardware Used:
@@ -25,7 +24,7 @@ The "pic18f16q41-analog-sensor-net" project highlights the advanced analog perip
 # Demo Configuration:
 The Curiosity Low Pin Count (LPC) Development Board (Part # DM164137) was selected as the development platform for this code example. The analog sensor net is comprised of four different sensors that each provide an analog output voltage representative of the physical property they are measuring. The analog output from each sensor was connected using jumper wires to each respective analog input on the PIC18F16Q41 microcontroller. The Operational Amplifier (OPA) module was used for two of the four sensor interfaces in this example, so the analog output of those sensors were connected to the designated non-inverting operational amplifier pins (OPA1IN+). The analog outputs of the other two sensors were measured directly using the ADC, so those signals were connected directly to the designated analog channels on the PIC18F16Q41. The sensor output results are displayed using the UART module, and the TX pin selected for the UART was RB7. The virtual communication port on the Curiosity LPC development board was used as the UART to USB bridge, so the TX pin on the microcontroller (RB7) was connected using a jumper wire to the corresponding TX pin on the virtual COM port. The following table summarizes the signal connections used in this code example:
 
-|Signal                             | Micrcontroller Pin        |
+|Signal                             | Microcontroller Pin        |
 |-----------------------------------|:-------------------------:|
 |Temperature Sensor                 | RB5 (OPA Input, OPA1IN0+)  |
 |Humidity Sensor Output             | RB6 (ADC Positive Input)  |
